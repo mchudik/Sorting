@@ -1,0 +1,17 @@
+build
+**/thirdparty
+**/.stamp-thirdparty*
+**/obj
+.stamp-thirdparty*
+thirdparty
+exes/pcap/Service References
+libs/mfund/MFMultiPlayer/player_h.h
+log.txt
+exes/capture/gstreamer
+tools/appliance_scripts/device_reset.tgz
+tools/appliance_scripts/device_reset.tar
+tools/appliance_scripts/device_reset/.complete
+tests/.idea/
+*.iml
+*.DS_STORE
+.idea/
