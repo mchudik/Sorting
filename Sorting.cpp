@@ -26,7 +26,7 @@ bool stringCompare( const string &left, const string &right ){
 	return false;
 }
 
-int compare(vector<string>& s1, vector<string>& s2) {
+int compare(const vector<string>& s1, const vector<string>& s2) {
 	if(stringNumeric(s1[sortColumn]) && stringNumeric(s2[sortColumn]))
 		return atoi(s1[sortColumn].c_str()) > atoi(s2[sortColumn].c_str());
 	else
@@ -78,14 +78,14 @@ int _tmain(int argc, _TCHAR* argv[])
 		return 1;
 
 	//Sort from least significant to most significant
-//	sortColumn = 4;	//Media Type
-//	sort(data.begin(), data.end(), compare); 
-//	sortColumn = 1; //X-Dimension
-//	sort(data.begin(), data.end(), compare); 
+	sortColumn = 4;	//Media Type
+	sort(data.begin(), data.end(), compare); 
+	sortColumn = 1; //X-Dimension
+	sort(data.begin(), data.end(), compare); 
 	sortColumn = 3; //Frame Rate
-	sort(data.begin(), data.end(), compare); 
+	stable_sort(data.begin(), data.end(), compare); 
 	sortColumn = 2;	//Y-Dimension
-	sort(data.begin(), data.end(), compare); 
+	stable_sort(data.begin(), data.end(), compare); 
 
 	printResults(data);
 	return 0;
