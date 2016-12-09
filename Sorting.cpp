@@ -2,20 +2,18 @@
 //
 
 #include "stdafx.h"
-#include "MediaType.h"
+#include "MediaSource.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	MediaType mediaType;
-	if(!mediaType.loadFromFile("Media-HP Webcam 3110.csv"))
+	MediaSource mediaSource;
+	if(!mediaSource.loadFromFile("Media-HP Webcam 3110.csv"))
 		return 1;
 
-	mediaType.sortColumn(4, true);	//Media Type	/ ascending
-	mediaType.sortColumn(1, false);	//X-Dimension	/ descending
-	mediaType.sortColumn(2, false);	//Frame Rate	/ descending
-	mediaType.sortColumn(3, false);	//Y-Dimension	/ descending
-	mediaType.printResults();
-
+	int bestIndex = mediaSource.sortMediaTypes();
+	mediaSource.printSortedMediaTypes();
+	cout << endl << "Best Media Type match from Media Source is at index " << bestIndex << endl << endl;
+ 
 	return 0;
 }
 
