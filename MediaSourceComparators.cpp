@@ -2,15 +2,14 @@
 #include "MediaSourceComparators.h"
 #include "SortUtils.h"
 
-
-MediaSourceComparators::MediaSourceComparators()
-{
-}
-
-
-MediaSourceComparators::~MediaSourceComparators()
-{
-}
+// comparisons can be based on value of original mediaType parameters (m_frameWidth, m_frameHeight, m_frameRate, m_encoding)
+// as well as comparing already generated curent bucket assignments between the two mediatypes
+// Buckets are: 
+//			m_bucketResolution;
+//			m_bucketAspectRatio;
+//			m_bucketFrameRate;
+//			m_bucketRecompression;
+//			m_bucketColorConversion;
 
 bool MediaSourceComparators::compareFrameRate(const MediaType& source1, const MediaType& source2) {
 	// implementation example sorting in descending mode

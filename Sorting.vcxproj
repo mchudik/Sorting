@@ -93,6 +93,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MediaSourceBucketizers.cpp" />
     <ClCompile Include="MediaType.cpp" />
     <ClCompile Include="MediaSourceComparators.cpp" />
     <ClCompile Include="MediaSource.cpp" />
@@ -104,6 +105,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MediaSourceBucketizers.h" />
     <ClInclude Include="MediaType.h" />
     <ClInclude Include="MediaSourceComparators.h" />
     <ClInclude Include="MediaSource.h" />

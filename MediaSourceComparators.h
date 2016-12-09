@@ -1,5 +1,6 @@
 #pragma once
 #include "MediaSource.h"
+
 class MediaSourceComparators
 {
 public:
