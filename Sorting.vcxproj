@@ -94,7 +94,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MediaSourceBucketizers.cpp" />
-    <ClCompile Include="MediaType.cpp" />
+    <ClCompile Include="MediaSourceOption.cpp" />
     <ClCompile Include="MediaSourceComparators.cpp" />
     <ClCompile Include="MediaSource.cpp" />
     <ClCompile Include="Sorting.cpp" />
@@ -106,7 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MediaSourceBucketizers.h" />
-    <ClInclude Include="MediaType.h" />
+    <ClInclude Include="MediaSourceOption.h" />
     <ClInclude Include="MediaSourceComparators.h" />
     <ClInclude Include="MediaSource.h" />
     <ClInclude Include="SortUtils.h" />

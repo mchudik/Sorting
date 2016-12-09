@@ -4,13 +4,13 @@
 class MediaSourceBucketizers
 {
 public:
-	MediaSourceBucketizers();
-	~MediaSourceBucketizers();
+	MediaSourceBucketizers() {};
+	~MediaSourceBucketizers() {};
 
-	static void MediaSourceBucketizers::bucketizeResolution(MediaType& mediaType);
-	static void MediaSourceBucketizers::bucketizeAspectRatio(MediaType& mediaType);
-	static void MediaSourceBucketizers::bucketizeFrameRate(MediaType& mediaType);
-	static void MediaSourceBucketizers::bucketizeRecompression(MediaType& mediaType);
-	static void MediaSourceBucketizers::bucketizeColorConversion(MediaType& mediaType);
+	static void MediaSourceBucketizers::bucketizeResolution(MediaSourceOption& mediaSourceOption);
+	static void MediaSourceBucketizers::bucketizeAspectRatio(MediaSourceOption& mediaSourceOption);
+	static void MediaSourceBucketizers::bucketizeFrameRate(MediaSourceOption& mediaSourceOption);
+	static void MediaSourceBucketizers::bucketizeRecompression(MediaSourceOption& mediaSourceOption);
+	static void MediaSourceBucketizers::bucketizeColorConversion(MediaSourceOption& mediaSourceOption);
 };
 

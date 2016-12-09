@@ -1,12 +1,12 @@
 #pragma once
-#include <iostream>     // std::cout
-#include <iterator>     // std::ostream_iterator
-#include <vector>       // std::vector
-#include <algorithm>    // std::copy
+#include <iostream>     
+#include <iterator>     
+#include <vector>       
+#include <algorithm>    
 #include <sstream>
 #include <fstream>
 #include <string>
-#include "MediaType.h"
+#include "MediaSourceOption.h"
 
 using namespace std;
 
@@ -16,12 +16,18 @@ public:
 	MediaSource(void) {};
 	~MediaSource(void) {};
 
-	void AddMediaType(MediaType mediaType);
-	int sortMediaTypes();
-	void ClearMediaTypeList();
+	void addMediaSourceOption(
+		unsigned int index,
+		unsigned int frameWidth,
+		unsigned int frameHeight,
+		double frameRate,
+		string encoding);
+	void addMediaSourceOption(MediaSourceOption mediaSourceOption);
+	int  sortMediaSource();
+	void clearMediaSource();
 	bool loadFromFile(string filePath);
-	void printSortedMediaTypes();
+	void printSortedMediaSource();
 
 private:
-	vector <MediaType> mediaTypeList;
+	vector <MediaSourceOption> mediaSource;
 };

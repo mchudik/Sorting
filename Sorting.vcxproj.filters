@@ -24,9 +24,6 @@
     <ClCompile Include="MediaSourceComparators.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MediaType.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MediaSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -34,6 +31,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MediaSourceBucketizers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MediaSourceOption.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,16 +47,16 @@
     <ClInclude Include="MediaSourceComparators.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MediaType.h">
+    <ClInclude Include="SortUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MediaSourceBucketizers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MediaSource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SortUtils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MediaSourceBucketizers.h">
+    <ClInclude Include="MediaSourceOption.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
