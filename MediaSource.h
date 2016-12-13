@@ -22,12 +22,19 @@ public:
 		unsigned int frameHeight,
 		double frameRate,
 		string encoding);
-	void addMediaSourceOption(MediaSourceOption mediaSourceOption);
-	int  sortMediaSource();
+
+	vector <MediaSourceOption>& getSortedMediaSource(
+		unsigned int frameWidth,
+		unsigned int frameHeight,
+		double frameRate,
+		string encoding);
+
 	void clearMediaSource();
 	bool loadFromFile(string filePath);
-	void printSortedMediaSource();
+	void printSortedMediaSource(vector <MediaSourceOption>& mediaSourceOption);
 
 private:
+	void addMediaSourceOption(MediaSourceOption mediaSourceOption);
+
 	vector <MediaSourceOption> mediaSource;
 };

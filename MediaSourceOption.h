@@ -12,7 +12,7 @@ public:
 		double frameRate,
 		string encoding);
 
-	~MediaSourceOption();
+	~MediaSourceOption() {};
 
 	//Properies
 	unsigned int m_index;

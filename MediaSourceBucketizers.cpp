@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "MediaSourceBucketizers.h"
 
-
 void MediaSourceBucketizers::bucketizeResolution(MediaSourceOption& mediaSourceOption)
 {
 	// Resolution (Height)-4 buckets, 1080 - 720 - 480 – 240, Indicating median of a range

@@ -17,7 +17,3 @@ MediaSourceOption::MediaSourceOption(
 {
 }
 
-
-MediaSourceOption::~MediaSourceOption()
-{
-}

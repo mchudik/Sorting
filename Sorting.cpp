@@ -10,9 +10,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	if(!mediaSource.loadFromFile("Media-HP Webcam 3110.csv"))
 		return 1;
 
-	int bestIndex = mediaSource.sortMediaSource();
-	mediaSource.printSortedMediaSource();
-	cout << endl << "Best Media Type match from Media Source is at index " << bestIndex << endl << endl;
+	vector <MediaSourceOption> sortedMediaSource = mediaSource.getSortedMediaSource(640, 480, 25, "YUY2");
+	mediaSource.printSortedMediaSource(sortedMediaSource);
+	cout << endl << "Best Media Type match from Media Source is at index " << sortedMediaSource[0].m_index << endl;
  
 	return 0;
 }

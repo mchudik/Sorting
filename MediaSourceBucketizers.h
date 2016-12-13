@@ -1,6 +1,9 @@
 #pragma once
 #include "MediaSource.h"
 
+typedef void(*MediaSourceBucketizer)(MediaSourceOption&);
+extern MediaSourceBucketizer mediaSourceBucketizers[];
+
 class MediaSourceBucketizers
 {
 public:

@@ -2,12 +2,7 @@
 #include "MediaSourceOption.h"
 #include "MediaSourceBucketizers.h"
 #include "MediaSourceComparators.h"
-
-template <typename T, unsigned S>
-inline unsigned arraySize(const T(&arr)[S]) { return S; }
-
-typedef void(*MediaSourceBucketizer)(MediaSourceOption&);
-typedef bool(*MediaSourceComparator)(const MediaSourceOption&, const MediaSourceOption&);
+#include "SortUtils.h"
 
 // This list defines order of processing individual bucketizers
 static MediaSourceBucketizer mediaSourceBucketizers[] = {
@@ -43,21 +38,25 @@ void MediaSource::addMediaSourceOption(MediaSourceOption mediaSourceOption)
 	mediaSource.push_back(mediaSourceOption);
 }
 
-// Main entry for sorting the list by individual functions
-int MediaSource::sortMediaSource()
+vector <MediaSourceOption>& MediaSource::getSortedMediaSource(
+	unsigned int frameWidth,
+	unsigned int frameHeight,
+	double frameRate,
+	string encoding)
 {
+	MediaSourceOption inputParameters(0, frameWidth, frameHeight, frameRate, encoding);
+
 	// Bucketize first based on parameter criteria
 	for (unsigned int i = 0; i < arraySize(mediaSourceBucketizers); i++) {
 		for (MediaSourceOption &n : mediaSource) {
 			mediaSourceBucketizers[i](n);
 		}
 	}
-	// Sort second either by parameter values, and/or by bucket associations
+	// Sort second either by parameter values, and/or by bucket associations, and/or by input parameter values
 	for (unsigned int i = 0; i < arraySize(mediaSourceComparators); i++) {
-		stable_sort(mediaSource.begin(), mediaSource.end(), mediaSourceComparators[i]);
+		stable_sort(mediaSource.begin(), mediaSource.end(), MediaSourceComparators(inputParameters, i));
 	}
-	// Return the topmost media type, the best match
-	return mediaSource.size() > 0 ? mediaSource.at(0).m_index : -1;
+	return mediaSource;
 }
 
 void MediaSource::clearMediaSource()
@@ -91,9 +90,9 @@ bool MediaSource::loadFromFile(string filePath)
 }
 
 // Just for debugging - remove
-void MediaSource::printSortedMediaSource() 
+void MediaSource::printSortedMediaSource(vector <MediaSourceOption>& mediaSourceOption)
 {
-	for (MediaSourceOption &n : mediaSource) {
+	for (MediaSourceOption &n : mediaSourceOption) {
 		cout << n.m_index << "\t" << n.m_frameWidth << "\t" << n.m_frameHeight << "\t" << n.m_frameRate << "\t" << n.m_encoding << "\t" << n.m_bucketFrameRate << endl;
 	}
 } 
